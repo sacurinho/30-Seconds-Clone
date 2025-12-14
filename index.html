@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo 🧠</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card_quiz">
+
+        <div class="header_quiz" style="display: none;">
+            <h2>Quiz Time!</h2>
+            <div class="score_timer">
+                <span class="score">Score: 0</span>
+                <span class="timer">Tempo: 10s</span>
+            </div>
+        </div>
+
+        <p class="question">TESTE O SEU CONHECIMENTO AQUI. DIVIRTA-SE!</p>
+
+        <ul class="answers">
+            <li class="answer answer0" data-index="0" style="display: none;"></li>
+            <li class="answer answer1" data-index="1" style="display: none;"></li>
+            <li class="answer answer2" data-index="2" style="display: none;"></li>
+            <li class="answer answer3" data-index="3" style="display: none;"></li>
+        </ul>
+
+        <div class="end_screen" style="display: none;">
+            <h3>🎉 Quiz Finalizado!</h3>
+            <p class="final_score_text"></p>
+        </div>
+
+    </div>
+
+    <div class="button_container">
+        <button class="btn start_btn">INICIAR QUIZ</button>
+        <button class="btn restart_btn" style="display: none;">REINICIAR</button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
