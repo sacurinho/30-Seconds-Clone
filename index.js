@@ -9,7 +9,7 @@ const end_screen = document.querySelector(".end_screen");
 const final_score_text = document.querySelector(".final_score_text");
 const answersList = document.querySelector(".answers");
 
-const perguntas = [
+const perguntasOriginais = [
     {
         quest: "Qual cantor é conhecido como o Rei do Pop",
         options: ["Elvis", "Prince", "Michael Jackson", "Madonna"],
@@ -862,21 +862,40 @@ const perguntas = [
     }
 ];
 
-// Variáveis de Estado
+// --- Variáveis de Estado Ajustadas ---
 let perguntasRestantes = [];
 let perguntaAtual;
 let bloqueado = false;
 let score = 0;
 let timerInterval;
-const TEMPO_POR_PERGUNTA = 10; // Segundos
+
+// ✨ NOVO LIMITE DE TEMPO: 15 segundos
+const TEMPO_POR_PERGUNTA = 15; 
+// ✨ NOVO LIMITE DE PERGUNTAS: 30
+const LIMITE_PERGUNTAS = 30; 
+let perguntasTotaisFeitas = 0;
+
+// Função para criar o conjunto de 30 perguntas (repetindo as originais)
+function criarListaPerguntas() {
+    perguntasRestantes = [];
+    // Repete as perguntasOriginais até atingir o LIMITE_PERGUNTAS
+    for (let i = 0; i < LIMITE_PERGUNTAS; i++) {
+        const pergunta = perguntasOriginais[i % perguntasOriginais.length];
+        perguntasRestantes.push({...pergunta}); // Cria uma cópia para evitar alterações no original
+    }
+    // Opcional: Embaralhar a lista final de 30 perguntas
+    perguntasRestantes.sort(() => Math.random() - 0.5);
+}
 
 // --- Funções Principais ---
 
 // Inicializa o quiz
 function iniciarQuiz() {
     score = 0;
-    scoreEl.textContent = "Score: 0";
-    perguntasRestantes = [...perguntas];
+    perguntasTotaisFeitas = 0;
+    criarListaPerguntas(); // Cria e embaralha a lista de 30 perguntas
+
+    scoreEl.textContent = `Score: 0 | Pergunta: 1/${LIMITE_PERGUNTAS}`;
 
     // Oculta botões e telas
     start_btn.style.display = "none";
@@ -895,9 +914,13 @@ function iniciarQuiz() {
 // Renderiza a pergunta
 function renderQuestion() {
     // 1. Fim do Quiz
-    if (perguntasRestantes.length === 0) {
+    if (perguntasTotaisFeitas >= LIMITE_PERGUNTAS) {
         return finalizarQuiz();
     }
+
+    perguntasTotaisFeitas++;
+    scoreEl.textContent = `Score: ${score} | Pergunta: ${perguntasTotaisFeitas}/${LIMITE_PERGUNTAS}`;
+
 
     // Reseta o estado para a nova pergunta
     bloqueado = false;
@@ -907,9 +930,8 @@ function renderQuestion() {
     clearInterval(timerInterval); // Limpa o timer anterior
     iniciarTimer(); // Inicia um novo timer
 
-    // 2. Seleciona a Pergunta
-    const index = Math.floor(Math.random() * perguntasRestantes.length);
-    perguntaAtual = perguntasRestantes.splice(index, 1)[0];
+    // 2. Seleciona a Pergunta (retirando do array restante)
+    perguntaAtual = perguntasRestantes.shift(); // Pega a primeira pergunta do array e remove
     questionEl.textContent = perguntaAtual.quest + "?";
 
     // 3. Embaralha e Renderiza as Opções
@@ -934,7 +956,6 @@ function handleAnswerClick(clickedAnswer) {
     if (isCorrect) {
         clickedAnswer.classList.add("correct");
         score++;
-        scoreEl.textContent = `Score: ${score}`;
     } else {
         clickedAnswer.classList.add("incorrect");
         // Mostra a resposta correta
@@ -965,7 +986,7 @@ function iniciarTimer() {
         if (tempoRestante <= 0) {
             clearInterval(timerInterval);
             bloqueado = true;
-            questionEl.textContent = "Tempo esgotado! A resposta era: " + perguntaAtual.cor;
+            questionEl.textContent = "Tempo esgotado! A resposta correta era: " + perguntaAtual.cor;
             answersEl.forEach(a => a.classList.add("locked")); // Bloqueia clicks
 
             // Mostra a resposta correta
@@ -995,7 +1016,7 @@ function finalizarQuiz() {
 
     // Mostra a tela final
     end_screen.style.display = "block";
-    final_score_text.textContent = `Sua pontuação final é: ${score} de ${perguntas.length} perguntas.`;
+    final_score_text.textContent = `Sua pontuação final é: ${score} de ${LIMITE_PERGUNTAS} perguntas.`;
     restart_btn.style.display = "block"; // Mostra o botão de reiniciar
 }
 
@@ -1013,3 +1034,9 @@ start_btn.addEventListener("click", iniciarQuiz);
 
 // Botão Reiniciar
 restart_btn.addEventListener("click", iniciarQuiz);
+
+// O código abaixo garante que a mensagem inicial seja exibida
+// quando a página carrega, se for o caso.
+if (perguntasTotaisFeitas === 0 && start_btn.style.display !== "none") {
+    questionEl.textContent = "TESTE O SEU CONHECIMENTO AQUI. DIVIRTA-SE!";
+}
