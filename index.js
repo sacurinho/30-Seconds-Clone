@@ -9,6 +9,7 @@ const end_screen = document.querySelector(".end_screen");
 const final_score_text = document.querySelector(".final_score_text");
 const answersList = document.querySelector(".answers");
 
+// Lista original de perguntas (80 perguntas no total)
 const perguntasOriginais = [
     {
         quest: "Qual cantor é conhecido como o Rei do Pop",
@@ -616,11 +617,6 @@ const perguntasOriginais = [
         cor: "Winston Churchill"
     },
     {
-        quest: "Qual é a capital da Turquia",
-        options: ["Ancara", "Istambul", "Antalya", "Izmir"],
-        cor: "Ancara"
-    },
-    {
         quest: "Qual é o maior estado do Brasil",
         options: ["São Paulo", "Rio de Janeiro", "Amazonas", "Minas Gerais"],
         cor: "Amazonas"
@@ -726,11 +722,6 @@ const perguntasOriginais = [
         cor: "Alasca"
     },
     {
-        quest: "Qual é a capital do Canadá",
-        options: ["Vancouver", "Montreal", "Ottawa", "Toronto"],
-        cor: "Ottawa"
-    },
-    {
         quest: "Quem inventou a vacina contra a varíola",
         options: ["Edward Jenner", "Louis Pasteur", "Fleming", "Koch"],
         cor: "Edward Jenner"
@@ -764,11 +755,6 @@ const perguntasOriginais = [
         quest: "Qual é a maior ilha do mundo",
         options: ["Groenlândia", "Madagascar", "Sumatra", "Bornéu"],
         cor: "Groenlândia"
-    },
-    {
-        quest: "Quem inventou o avião",
-        options: ["Santos Dumont", "Irmãos Wright", "Leonardo da Vinci", "Bell"],
-        cor: "Santos Dumont"
     },
     {
         quest: "Qual animal é símbolo dos EUA",
@@ -831,19 +817,9 @@ const perguntasOriginais = [
         cor: "Edimburgo"
     },
     {
-        quest: "Quem inventou o telefone",
-        options: ["Alexander Graham Bell", "Edison", "Tesla", "Marconi"],
-        cor: "Alexander Graham Bell"
-    },
-    {
         quest: "Qual é o deserto mais frio do mundo",
         options: ["Antártico", "Gobi", "Kalahari", "Atacama"],
         cor: "Antártico"
-    },
-    {
-        quest: "Qual planeta é conhecido como gigante gasoso",
-        options: ["Júpiter", "Marte", "Vénus", "Mercúrio"],
-        cor: "Júpiter"
     },
     {
         quest: "Quem pintou O Nascimento de Vénus",
@@ -859,7 +835,997 @@ const perguntasOriginais = [
         quest: "Quem escreveu O Velho e o Mar",
         options: ["Ernest Hemingway", "Steinbeck", "Faulkner", "Orwell"],
         cor: "Ernest Hemingway"
-    }
+    },
+    {
+        "quest": "Qual é a capital da Noruega",
+        "options": ["Oslo", "Estocolmo", "Helsínquia", "Copenhaga"],
+        "cor": "Oslo"
+      },
+      {
+        "quest": "Qual animal é símbolo da Austrália",
+        "options": ["Canguru", "Koala", "Dingo", "Emu"],
+        "cor": "Canguru"
+      },
+      {
+        "quest": "Qual é a maior cadeia de montanhas da América do Sul",
+        "options": ["Andes", "Himalaia", "Alpes", "Rocosas"],
+        "cor": "Andes"
+      },
+      {
+        "quest": "Quem inventou a lâmpada elétrica",
+        "options": ["Thomas Edison", "Tesla", "Bell", "Franklin"],
+        "cor": "Thomas Edison"
+      },
+      {
+        "quest": "Qual é a maior cidade do Brasil",
+        "options": ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador"],
+        "cor": "São Paulo"
+      },
+      {
+        "quest": "Qual é a moeda do Reino Unido",
+        "options": ["Libra esterlina", "Dólar", "Euro", "Franco"],
+        "cor": "Libra esterlina"
+      },
+      {
+        "quest": "Quem escreveu “O Príncipe”",
+        "options": ["Maquiavel", "Hobbes", "Rousseau", "Locke"],
+        "cor": "Maquiavel"
+      },
+      {
+        "quest": "Qual é a capital da Irlanda",
+        "options": ["Dublin", "Belfast", "Cork", "Galway"],
+        "cor": "Dublin"
+      },
+      {
+        "quest": "Qual é o maior deserto da Ásia",
+        "options": ["Gobi", "Kyzylkum", "Thar", "Karakum"],
+        "cor": "Gobi"
+      },
+      {
+        "quest": "Quem é o autor de “Moby Dick”",
+        "options": ["Herman Melville", "Poe", "Twain", "Hawthorne"],
+        "cor": "Herman Melville"
+      },
+      {
+        "quest": "Qual planeta tem o maior número de anéis",
+        "options": ["Saturno", "Júpiter", "Urano", "Netuno"],
+        "cor": "Saturno"
+      },
+      {
+        "quest": "Qual é a capital da Polônia",
+        "options": ["Varsóvia", "Cracóvia", "Gdansk", "Wroclaw"],
+        "cor": "Varsóvia"
+      },
+      {
+        "quest": "Quem descobriu a circulação sanguínea",
+        "options": ["William Harvey", "Pasteur", "Fleming", "Galeno"],
+        "cor": "William Harvey"
+      },
+      {
+        "quest": "Qual é a maior cidade da China",
+        "options": ["Xangai", "Pequim", "Hong Kong", "Guangzhou"],
+        "cor": "Xangai"
+      },
+      {
+        "quest": "Quem pintou “O Beijo”",
+        "options": ["Gustav Klimt", "Monet", "Van Gogh", "Picasso"],
+        "cor": "Gustav Klimt"
+      },
+      {
+        "quest": "Qual país é famoso pelo sushi",
+        "options": ["Japão", "Coreia", "China", "Tailândia"],
+        "cor": "Japão"
+      },
+      {
+        "quest": "Qual é a capital da Islândia",
+        "options": ["Reiquiavique", "Oslo", "Helsínquia", "Copenhaga"],
+        "cor": "Reiquiavique"
+      },
+      {
+        "quest": "Quem escreveu “Os Miseráveis”",
+        "options": ["Victor Hugo", "Balzac", "Flaubert", "Dumas"],
+        "cor": "Victor Hugo"
+      },
+      {
+        "quest": "Qual é o rio mais longo da América do Norte",
+        "options": ["Mississippi", "Colorado", "Missouri", "Yukon"],
+        "cor": "Mississippi"
+      },
+      {
+        "quest": "Qual é a maior floresta tropical do mundo",
+        "options": ["Amazônica", "Congo", "Taiga", "Valdiviana"],
+        "cor": "Amazônica"
+      },
+      {
+        "quest": "Quem pintou “Les Demoiselles d’Avignon”",
+        "options": ["Picasso", "Matisse", "Dalí", "Monet"],
+        "cor": "Picasso"
+      },
+      {
+        "quest": "Qual é a capital da Itália",
+        "options": ["Roma", "Milão", "Veneza", "Florença"],
+        "cor": "Roma"
+      },
+      {
+        "quest": "Quem foi o primeiro homem a viajar ao espaço",
+        "options": ["Yuri Gagarin", "Neil Armstrong", "Alan Shepard", "John Glenn"],
+        "cor": "Yuri Gagarin"
+      },
+      {
+        "quest": "Qual é o maior arquipélago do mundo",
+        "options": ["Indonésia", "Filipinas", "Japão", "Maldivas"],
+        "cor": "Indonésia"
+      },
+      {
+        "quest": "Quem escreveu “A Letra Escarlate”",
+        "options": ["Nathaniel Hawthorne", "Poe", "Melville", "Dickens"],
+        "cor": "Nathaniel Hawthorne"
+      },
+      {
+        "quest": "Qual animal é símbolo do Canadá",
+        "options": ["Castor", "Urso", "Águia", "Lobo"],
+        "cor": "Castor"
+      },
+      {
+        "quest": "Qual é a moeda da Suécia",
+        "options": ["Coroa sueca", "Dólar", "Euro", "Libra"],
+        "cor": "Coroa sueca"
+      },
+      {
+        "quest": "Quem pintou “A Escola de Atenas”",
+        "options": ["Rafael", "Michelangelo", "Leonardo", "Donatello"],
+        "cor": "Rafael"
+      },
+      {
+        "quest": "Qual país é famoso pelo samba",
+        "options": ["Brasil", "Argentina", "Portugal", "Espanha"],
+        "cor": "Brasil"
+      },
+      {
+        "quest": "Qual é o maior estado da Austrália",
+        "options": ["Austrália Ocidental", "Nova Gales do Sul", "Queensland", "Victoria"],
+        "cor": "Austrália Ocidental"
+      },
+      {
+        "quest": "Qual marca de roupa é conhecida pelo logótipo do crocodilo",
+        "options": ["Nike", "Adidas", "Lacoste", "Puma"],
+        "cor": "Lacoste"
+      },
+      {
+        "quest": "Qual laptop é produzido pela Apple",
+        "options": ["Inspiron", "ThinkPad", "MacBook", "Pavilion"],
+        "cor": "MacBook"
+      },
+      {
+        "quest": "Qual é a capital da Noruega",
+        "options": ["Bergen", "Oslo", "Estocolmo", "Helsínquia"],
+        "cor": "Oslo"
+      },
+      {
+        "quest": "Quem liderou a Revolução Francesa",
+        "options": ["Napoleão", "Robespierre", "Robespierre", "Luís XVI"],
+        "cor": "Robespierre"
+      },
+      {
+        "quest": "Qual escritor criou Harry Potter",
+        "options": ["Tolkien", "Lewis", "J. K. Rowling", "Martin"],
+        "cor": "J. K. Rowling"
+      },
+      {
+        "quest": "Qual órgão controla o equilíbrio do corpo",
+        "options": ["Coração", "Cerebelo", "Pulmão", "Estômago"],
+        "cor": "Cerebelo"
+      },
+      {
+        "quest": "Qual rede social é focada em vídeos longos",
+        "options": ["TikTok", "Instagram", "YouTube", "Snapchat"],
+        "cor": "YouTube"
+      },
+      {
+        "quest": "Qual desporto usa cesta e bola laranja",
+        "options": ["Futebol", "Andebol", "Basquetebol", "Voleibol"],
+        "cor": "Basquetebol"
+      },
+      {
+        "quest": "Qual marca fabrica o portátil ThinkPad",
+        "options": ["Dell", "HP", "Lenovo", "Asus"],
+        "cor": "Lenovo"
+      },
+      {
+        "quest": "Qual país tem a bandeira com um sol vermelho",
+        "options": ["China", "Japão", "Coreia do Sul", "Vietname"],
+        "cor": "Japão"
+      },
+      {
+        "quest": "Qual cantor é conhecido como “Rei do Pop”",
+        "options": ["Elvis", "Prince", "Michael Jackson", "Madonna"],
+        "cor": "Michael Jackson"
+      },
+      {
+        "quest": "Qual cidade é conhecida como Cidade Luz",
+        "options": ["Roma", "Londres", "Paris", "Viena"],
+        "cor": "Paris"
+      },
+      {
+        "quest": "Qual elemento químico tem símbolo Fe",
+        "options": ["Fósforo", "Ferro", "Flúor", "Frâncio"],
+        "cor": "Ferro"
+      },
+      {
+        "quest": "Qual jogo eletrônico mais vendido da história",
+        "options": ["GTA V", "Tetris", "Minecraft", "Mario"],
+        "cor": "Minecraft"
+      },
+      {
+        "quest": "Qual marca de carro tem o logótipo dos quatro anéis",
+        "options": ["BMW", "Mercedes", "Audi", "Volvo"],
+        "cor": "Audi"
+      },
+      {
+        "quest": "Qual matemático criou a geometria euclidiana",
+        "options": ["Pitágoras", "Euclides", "Arquimedes", "Gauss"],
+        "cor": "Euclides"
+      },
+      {
+        "quest": "Qual prato é típico da Itália",
+        "options": ["Paella", "Sushi", "Pizza", "Tacos"],
+        "cor": "Pizza"
+      },
+      {
+        "quest": "Qual planeta é o maior do sistema solar",
+        "options": ["Terra", "Saturno", "Júpiter", "Urano"],
+        "cor": "Júpiter"
+      },
+      {
+        "quest": "Qual estilista fundou a Chanel",
+        "options": ["Dior", "Versace", "Coco Chanel", "Armani"],
+        "cor": "Coco Chanel"
+      },
+      {
+        "quest": "Qual país venceu o Euro 2016",
+        "options": ["Espanha", "França", "Portugal", "Alemanha"],
+        "cor": "Portugal"
+      },
+      {
+        "quest": "Qual profissão cuida dos dentes",
+        "options": ["Médico", "Enfermeiro", "Dentista", "Farmacêutico"],
+        "cor": "Dentista"
+      },
+      {
+        "quest": "Qual filme tem o personagem Darth Vader",
+        "options": ["Star Trek", "Avatar", "Star Wars", "Matrix"],
+        "cor": "Star Wars"
+      },
+      {
+        "quest": "Qual ciência estuda os insetos",
+        "options": ["Botânica", "Zoologia", "Entomologia", "Ecologia"],
+        "cor": "Entomologia"
+      },
+      {
+        "quest": "Qual rede social pertence à Meta",
+        "options": ["TikTok", "X", "Instagram", "Telegram"],
+        "cor": "Instagram"
+      },
+      {
+        "quest": "Qual montanha é a mais alta do mundo",
+        "options": ["Kilimanjaro", "Aconcágua", "Everest", "Elbrus"],
+        "cor": "Everest"
+      },
+      {
+        "quest": "Qual bebida é feita a partir de uvas",
+        "options": ["Cerveja", "Whisky", "Vinho", "Rum"],
+        "cor": "Vinho"
+      },
+      {
+        "quest": "Qual marca fabrica o laptop Inspiron",
+        "options": ["HP", "Lenovo", "Dell", "Acer"],
+        "cor": "Dell"
+      },
+      {
+        "quest": "Qual instrumento tem teclas brancas e pretas",
+        "options": ["Violino", "Guitarra", "Piano", "Flauta"],
+        "cor": "Piano"
+      },
+      {
+        "quest": "Qual país é famoso pelo relógio de cuco",
+        "options": ["França", "Itália", "Suíça", "Áustria"],
+        "cor": "Suíça"
+      },
+      {
+        "quest": "Qual doença é causada pela falta de vitamina C",
+        "options": ["Raquitismo", "Escorbuto", "Anemia", "Diabetes"],
+        "cor": "Escorbuto"
+      },
+      {
+        "quest": "Qual desporto é praticado por Serena Williams",
+        "options": ["Futebol", "Atletismo", "Ténis", "Golfe"],
+        "cor": "Ténis"
+      },
+      {
+        "quest": "Qual escritor escreveu “O Velho e o Mar”",
+        "options": ["Steinbeck", "Ernest Hemingway", "Faulkner", "Poe"],
+        "cor": "Ernest Hemingway"
+      },
+      {
+        "quest": "Qual oceano banha Moçambique",
+        "options": ["Atlântico", "Índico", "Pacífico", "Ártico"],
+        "cor": "Índico"
+      },
+      {
+        "quest": "Qual marca de roupa tem o logótipo “Just Do It”",
+        "options": ["Puma", "Adidas", "Nike", "Reebok"],
+        "cor": "Nike"
+      },
+      {
+        "quest": "Qual jogo de tabuleiro envolve compra de propriedades",
+        "options": ["Xadrez", "Damas", "Monopoly", "Ludo"],
+        "cor": "Monopoly"
+      },
+      {
+        "quest": "Qual ciência estuda o corpo humano",
+        "options": ["Astronomia", "Anatomia", "Botânica", "Física"],
+        "cor": "Anatomia"
+      },
+      {
+        "quest": "Qual capital africana fica na Etiópia",
+        "options": ["Nairobi", "Kampala", "Adis Abeba", "Cartum"],
+        "cor": "Adis Abeba"
+      },
+      {
+        "quest": "Qual linguagem é usada para páginas interativas",
+        "options": ["HTML", "CSS", "JavaScript", "SQL"],
+        "cor": "JavaScript"
+      },
+      {
+        "quest": "Qual ator interpretou Iron Man",
+        "options": ["Evans", "Hemsworth", "Robert Downey Jr.", "Holland"],
+        "cor": "Robert Downey Jr."
+      },
+      {
+        "quest": "Qual país é famoso pela paella",
+        "options": ["México", "Espanha", "Portugal", "Itália"],
+        "cor": "Espanha"
+      },
+      {
+        "quest": "Qual marca fabrica o laptop Pavilion",
+        "options": ["Acer", "HP", "Asus", "Toshiba"],
+        "cor": "HP"
+      },
+      {
+        "quest": "Qual filósofo foi condenado à morte em Atenas",
+        "options": ["Platão", "Sócrates", "Aristóteles", "Epicuro"],
+        "cor": "Sócrates"
+      },
+      {
+        "quest": "Qual instrumento mede a febre",
+        "options": ["Balança", "Termómetro", "Barómetro", "Oxímetro"],
+        "cor": "Termómetro"
+      },
+      {
+        "quest": "Qual seleção venceu o Mundial 2014",
+        "options": ["Brasil", "Argentina", "Alemanha", "Espanha"],
+        "cor": "Alemanha"
+      },
+      {
+        "quest": "Qual estilo musical surgiu na Jamaica",
+        "options": ["Jazz", "Rock", "Reggae", "Blues"],
+        "cor": "Reggae"
+      },
+      {
+        "quest": "Qual país tem o maior rio em volume",
+        "options": ["Egipto", "Congo", "Brasil", "China"],
+        "cor": "Brasil"
+      },
+      {
+        "quest": "Qual aplicação é usada para videoconferências",
+        "options": ["WhatsApp", "Zoom", "Telegram", "Discord"],
+        "cor": "Zoom"
+      },
+      {
+        "quest": "Qual marca de carro é associada ao modelo Corolla",
+        "options": ["Nissan", "Honda", "Toyota", "Mazda"],
+        "cor": "Toyota"
+      },
+      {
+        "quest": "Qual órgão filtra o sangue",
+        "options": ["Fígado", "Pulmão", "Rim", "Coração"],
+        "cor": "Rim"
+      },
+      {
+        "quest": "Qual pintor é conhecido pelo cubismo",
+        "options": ["Monet", "Picasso", "Van Gogh", "Renoir"],
+        "cor": "Picasso"
+      },
+      {
+        "quest": "Qual prato é típico do Japão",
+        "options": ["Pizza", "Curry", "Sushi", "Lasanha"],
+        "cor": "Sushi"
+      },
+      {
+        "quest": "Qual cidade é capital do Canadá",
+        "options": ["Toronto", "Montreal", "Ottawa", "Calgary"],
+        "cor": "Ottawa"
+      },
+      {
+        "quest": "Qual empresa fabrica o laptop Aspire",
+        "options": ["Dell", "HP", "Acer", "Lenovo"],
+        "cor": "Acer"
+      },
+      {
+        "quest": "Qual escritor criou Dom Quixote",
+        "options": ["Dante", "Miguel de Cervantes", "Camões", "Shakespeare"],
+        "cor": "Miguel de Cervantes"
+      },
+      {
+        "quest": "Qual gás é essencial para a respiração humana",
+        "options": ["Hidrogénio", "Oxigénio", "Azoto", "Hélio"],
+        "cor": "Oxigénio"
+      },
+      {
+        "quest": "Qual desporto usa luvas e ringue",
+        "options": ["Karaté", "MMA", "Boxe", "Judo"],
+        "cor": "Boxe"
+      },
+      {
+        "quest": "Qual rede social usa mensagens temporárias",
+        "options": ["Facebook", "Snapchat", "LinkedIn", "X"],
+        "cor": "Snapchat"
+      },
+      {
+        "quest": "Qual marca de roupa é italiana",
+        "options": ["Nike", "Adidas", "Gucci", "Levi’s"],
+        "cor": "Gucci"
+      },
+      {
+        "quest": "Qual país inventou os Jogos Olímpicos",
+        "options": ["Roma", "Grécia", "China", "Egipto"],
+        "cor": "Grécia"
+      },
+      {
+        "quest": "Qual planeta é conhecido pelos anéis",
+        "options": ["Júpiter", "Saturno", "Urano", "Neptuno"],
+        "cor": "Saturno"
+      },
+      {
+        "quest": "Qual profissão projeta edifícios",
+        "options": ["Engenheiro civil", "Arquiteto", "Pedreiro", "Topógrafo"],
+        "cor": "Arquiteto"
+      },
+      {
+        "quest": "Qual série tem o personagem Jon Snow",
+        "options": ["Vikings", "Game of Thrones", "The Witcher", "Lost"],
+        "cor": "Game of Thrones"
+      },
+      {
+        "quest": "Qual instrumento é de sopro",
+        "options": ["Violino", "Piano", "Flauta", "Bateria"],
+        "cor": "Flauta"
+      },
+      {
+        "quest": "Qual marca fabrica o laptop ZenBook",
+        "options": ["Lenovo", "HP", "Asus", "MSI"],
+        "cor": "Asus"
+      },
+      {
+        "quest": "Qual escritor português ganhou o Nobel",
+        "options": ["Pessoa", "Camões", "José Saramago", "Eça"],
+        "cor": "José Saramago"
+      },
+      {
+        "quest": "Qual desporto é praticado com tacos e bola pequena",
+        "options": ["Futebol", "Golfe", "Basebol", "Rugby"],
+        "cor": "Golfe"
+      },
+      {
+        "quest": "Qual país é famoso pelo chocolate",
+        "options": ["Bélgica", "França", "Suíça", "Itália"],
+        "cor": "Suíça"
+      },
+      {
+        "quest": "Qual ciência estuda as estrelas",
+        "options": ["Geologia", "Astronomia", "Meteorologia", "Física"],
+        "cor": "Astronomia"
+      },
+      {
+        "quest": "Qual marca de carro fabrica o Civic",
+        "options": ["Toyota", "Honda", "Nissan", "Kia"],
+        "cor": "Honda"
+      },
+      {
+        "quest": "Qual parte do corpo é responsável pela visão",
+        "options": ["Ouvido", "Nariz", "Olho", "Pele"],
+        "cor": "Olho"
+      },
+      {
+        "quest": "Qual jogo eletrônico envolve blocos e construção",
+        "options": ["Roblox", "Fortnite", "Minecraft", "Sims"],
+        "cor": "Minecraft"
+      },
+      {
+        "quest": "Qual capital europeia fica na Alemanha",
+        "options": ["Hamburgo", "Munique", "Berlim", "Colónia"],
+        "cor": "Berlim"
+      },
+      {
+        "quest": "Qual bebida é típica do Brasil",
+        "options": ["Chá", "Vinho", "Café", "Cerveja"],
+        "cor": "Café"
+      },
+      {
+        "quest": "Qual empresa criou o sistema Windows",
+        "options": ["Apple", "IBM", "Microsoft", "Google"],
+        "cor": "Microsoft"
+      },
+      {
+        "quest": "Qual estilo artístico pintou relógios derretidos",
+        "options": ["Cubismo", "Surrealismo", "Realismo", "Barroco"],
+        "cor": "Surrealismo"
+      },
+      {
+        "quest": "Qual país é conhecido pela Torre Eiffel",
+        "options": ["Itália", "Espanha", "França", "Bélgica"],
+        "cor": "França"
+      },
+      {
+        "quest": "Qual marca de roupa é famosa por jeans",
+        "options": ["Gucci", "Zara", "Levi’s", "Prada"],
+        "cor": "Levi’s"
+      },
+      {
+        "quest": "Qual desporto é jogado por 11 jogadores em cada equipa",
+        "options": ["Basquetebol", "Rugby", "Futebol", "Hóquei"],
+        "cor": "Futebol"
+      },
+      {
+        "quest": "Qual instrumento mede o tempo",
+        "options": ["Régua", "Bússola", "Relógio", "Termómetro"],
+        "cor": "Relógio"
+      },
+      {
+        "quest": "Qual continente tem o deserto do Saara",
+        "options": ["Ásia", "América", "África", "Oceania"],
+        "cor": "África"
+      },
+      {
+        "quest": "Qual marca fabrica o laptop Predator",
+        "options": ["Asus", "Dell", "Acer", "HP"],
+        "cor": "Acer"
+      },
+      {
+        "quest": "Qual escritor escreveu “A Ilha do Tesouro”",
+        "options": ["Defoe", "Robert Louis Stevenson", "Swift", "Verne"],
+        "cor": "Robert Louis Stevenson"
+      },
+      {
+        "quest": "Qual parte do corpo bombeia o sangue",
+        "options": ["Pulmão", "Coração", "Rim", "Fígado"],
+        "cor": "Coração"
+      },
+      {
+        "quest": "Qual estilo musical é associado ao rap",
+        "options": ["Clássico", "Jazz", "Hip Hop", "Reggae"],
+        "cor": "Hip Hop"
+      },
+      {
+        "quest": "Qual país tem a maior população do mundo",
+        "options": ["EUA", "Índia", "China", "Rússia"],
+        "cor": "Índia"
+      },
+      {
+        "quest": "Qual empresa criou o TikTok",
+        "options": ["Meta", "Google", "ByteDance", "Tencent"],
+        "cor": "ByteDance"
+      },
+      {
+        "quest": "Qual jogo de tabuleiro é de estratégia militar",
+        "options": ["Dominó", "Xadrez", "Ludo", "Bingo"],
+        "cor": "Xadrez"
+      },
+      {
+        "quest": "Qual marca de carro fabrica o Model S",
+        "options": ["BMW", "Audi", "Tesla", "Volvo"],
+        "cor": "Tesla"
+      },
+      {
+        "quest": "Qual profissão escreve códigos",
+        "options": ["Designer", "Programador", "Analista", "Técnico"],
+        "cor": "Programador"
+      },
+      {
+        "quest": "Qual oceano é o maior do mundo",
+        "options": ["Índico", "Atlântico", "Pacífico", "Ártico"],
+        "cor": "Pacífico"
+      },
+      {
+        "quest": "Qual cidade é conhecida como Big Apple",
+        "options": ["Los Angeles", "Nova Iorque", "Chicago", "Miami"],
+        "cor": "Nova Iorque"
+      },
+      {
+        "quest": "Qual escritor criou Sherlock Holmes",
+        "options": ["Poe", "Christie", "Arthur Conan Doyle", "Chandler"],
+        "cor": "Arthur Conan Doyle"
+      },
+      {
+        "quest": "Qual ciência estuda os vulcões",
+        "options": ["Geografia", "Vulcanologia", "Sismologia", "Geologia"],
+        "cor": "Vulcanologia"
+      },
+      {
+        "quest": "Qual marca de roupa é espanhola",
+        "options": ["Nike", "Adidas", "Zara", "H&M"],
+        "cor": "Zara"
+      },
+      {
+        "quest": "Qual desporto envolve natação, ciclismo e corrida",
+        "options": ["Atletismo", "Triatlo", "Pentatlo", "Duatlo"],
+        "cor": "Triatlo"
+      },
+      {
+        "quest": "Qual empresa fabrica o laptop Legion",
+        "options": ["Dell", "HP", "Lenovo", "MSI"],
+        "cor": "Lenovo"
+      },
+      {
+        "quest": "Qual órgão é responsável pela respiração",
+        "options": ["Coração", "Pulmão", "Rim", "Fígado"],
+        "cor": "Pulmão"
+      },
+      {
+        "quest": "Qual filme ganhou o Oscar de Melhor Filme em 1994",
+        "options": ["Titanic", "Forrest Gump", "Pulp Fiction", "Braveheart"],
+        "cor": "Forrest Gump"
+      },
+      {
+        "quest": "Qual país é conhecido pela pizza e massa",
+        "options": ["França", "Itália", "Grécia", "Espanha"],
+        "cor": "Itália"
+      },
+      {
+        "quest": "Qual instrumento musical tem seis cordas",
+        "options": ["Violino", "Baixo", "Guitarra", "Harpa"],
+        "cor": "Guitarra"
+      },
+      {
+        "quest": "Qual cidade italiana é famosa pelo Coliseu",
+        "options": ["Milão", "Veneza", "Roma", "Florença"],
+        "cor": "Roma"
+      },
+      {
+        "quest": "Qual marca fabrica o portátil Surface",
+        "options": ["Dell", "Apple", "Microsoft", "Lenovo"],
+        "cor": "Microsoft"
+      },
+      {
+        "quest": "Qual compositor criou a Nona Sinfonia",
+        "options": ["Mozart", "Bach", "Beethoven", "Chopin"],
+        "cor": "Beethoven"
+      },
+      {
+        "quest": "Qual país tem a maior população de língua portuguesa",
+        "options": ["Brasil", "Angola", "Brasil", "Moçambique"],
+        "cor": "Brasil"
+      },
+      {
+        "quest": "Quem escreveu “Crime e Castigo”",
+        "options": ["Tolstói", "Dostoiévski", "Gogol", "Pushkin"],
+        "cor": "Dostoiévski"
+      },
+      {
+        "quest": "Qual planeta é conhecido como “Planeta Vermelho”",
+        "options": ["Mercúrio", "Vénus", "Marte", "Júpiter"],
+        "cor": "Marte"
+      },
+      {
+        "quest": "Qual desporto é jogado na NBA",
+        "options": ["Futebol", "Voleibol", "Basquetebol", "Rugby"],
+        "cor": "Basquetebol"
+      },
+      {
+        "quest": "Qual marca de roupa tem o logótipo com três listras",
+        "options": ["Puma", "Adidas", "Nike", "Reebok"],
+        "cor": "Adidas"
+      },
+      {
+        "quest": "Qual cientista propôs a teoria heliocêntrica",
+        "options": ["Galileu", "Copérnico", "Kepler", "Newton"],
+        "cor": "Copérnico"
+      },
+      {
+        "quest": "Qual país é berço da democracia",
+        "options": ["Roma", "Grécia", "Inglaterra", "França"],
+        "cor": "Grécia"
+      },
+      {
+        "quest": "Qual escritor criou “O Senhor dos Anéis”",
+        "options": ["Tolkien", "Rowling", "J. R. R. Tolkien", "Lewis"],
+        "cor": "J. R. R. Tolkien"
+      },
+      {
+        "quest": "Qual instrumento mede pressão arterial",
+        "options": ["Termómetro", "Esfigmomanómetro", "Oxímetro", "Barómetro"],
+        "cor": "Esfigmomanómetro"
+      },
+      {
+        "quest": "Qual marca de carro fabrica o Model 3",
+        "options": ["BMW", "Audi", "Tesla", "Mercedes"],
+        "cor": "Tesla"
+      },
+      {
+        "quest": "Qual doença é causada pelo vírus HIV",
+        "options": ["Gripe", "Hepatite", "SIDA/AIDS", "Sarampo"],
+        "cor": "SIDA/AIDS"
+      },
+      {
+        "quest": "Qual oceano é o mais profundo",
+        "options": ["Atlântico", "Índico", "Pacífico", "Ártico"],
+        "cor": "Pacífico"
+      },
+      {
+        "quest": "Qual escritor português é autor de “Os Lusíadas”",
+        "options": ["Pessoa", "Luís de Camões", "Eça", "Saramago"],
+        "cor": "Luís de Camões"
+      },
+      {
+        "quest": "Qual planeta tem maior número de luas",
+        "options": ["Saturno", "Terra", "Júpiter", "Marte"],
+        "cor": "Júpiter"
+      },
+      {
+        "quest": "Qual laptop é da marca Razer",
+        "options": ["ZenBook", "Surface", "Blade", "Legion"],
+        "cor": "Blade"
+      },
+      {
+        "quest": "Qual desporto é praticado com taco e bola",
+        "options": ["Futebol", "Basquetebol", "Golfe", "Natação"],
+        "cor": "Golfe"
+      },
+      {
+        "quest": "Qual pintor espanhol é conhecido pelo cubismo",
+        "options": ["Monet", "Van Gogh", "Picasso", "Dalí"],
+        "cor": "Picasso"
+      },
+      {
+        "quest": "Qual país venceu o Mundial de 2006",
+        "options": ["França", "Argentina", "Itália", "Alemanha"],
+        "cor": "Itália"
+      },
+      {
+        "quest": "Qual ciência estuda as plantas",
+        "options": ["Zoologia", "Física", "Botânica", "Biologia"],
+        "cor": "Botânica"
+      },
+      {
+        "quest": "Qual marca de roupa é francesa e famosa por perfumes",
+        "options": ["Gucci", "Prada", "Chanel", "Dior"],
+        "cor": "Chanel"
+      },
+      {
+        "quest": "Qual série tem personagens Walter White e Jesse Pinkman",
+        "options": ["Breaking Bad", "Breaking Bad", "The Wire", "Lost"],
+        "cor": "Breaking Bad"
+      },
+      {
+        "quest": "Qual rio atravessa Londres",
+        "options": ["Tamisa", "Sena", "Tamisa", "Danúbio"],
+        "cor": "Tamisa"
+      },
+  {
+    "quest": "Quem escreveu “O Retrato de Dorian Gray”",
+    "options": ["Oscar Wilde", "Shakespeare", "Poe", "Shelley"],
+    "cor": "Oscar Wilde"
+  },
+  {
+    "quest": "Qual é a capital do México",
+    "options": ["Guadalajara", "Monterrey", "Cidade do México", "Cancún"],
+    "cor": "Cidade do México"
+  },
+  {
+    "quest": "Qual é o maior país da América do Sul",
+    "options": ["Brasil", "Argentina", "Chile", "Peru"],
+    "cor": "Brasil"
+  },
+  {
+    "quest": "Quem descobriu a penicilina",
+    "options": ["Alexander Fleming", "Alexander Fleming", "Louis Pasteur", "Robert Koch"],
+    "cor": "Alexander Fleming"
+  },
+  {
+    "quest": "Qual é o nome da teoria que explica a origem do universo",
+    "options": ["Big Bang", "Big Bang", "Relatividade", "Evolução", "Gravitação"],
+    "cor": "Big Bang"
+  },
+  {
+    "quest": "Qual é a capital da Finlândia",
+    "options": ["Estocolmo", "Helsínquia", "Oslo", "Copenhaga"],
+    "cor": "Helsínquia"
+  },
+  {
+    "quest": "Qual é o maior predador terrestre",
+    "options": ["Tigre", "Urso-pardo", "Leão", "Hiena"],
+    "cor": "Urso-pardo"
+  },
+  {
+    "quest": "Quem é o autor de “O Código Da Vinci”",
+    "options": ["Dan Brown", "Dan Brown", "Stephen King", "J.K. Rowling"],
+    "cor": "Dan Brown"
+  },
+  {
+    "quest": "Qual animal produz seda",
+    "options": ["Bicho-da-seda", "Aranha", "Abelhas", "Lagarta comum"],
+    "cor": "Bicho-da-seda"
+  },
+  {
+    "quest": "Qual é o oceano mais frio",
+    "options": ["Atlântico", "Índico", "Ártico", "Pacífico"],
+    "cor": "Ártico"
+  },
+  {
+    "quest": "Quem foi o primeiro-ministro britânico durante a Segunda Guerra Mundial",
+    "options": ["Churchill", "Winston Churchill", "Thatcher", "Blair"],
+    "cor": "Winston Churchill"
+  },
+  {
+    "quest": "Qual é a capital da Turquia",
+    "options": ["Ancara", "Istambul", "Antalya", "Izmir"],
+    "cor": "Ancara"
+  },
+  {
+    "quest": "Qual é o maior estado do Brasil",
+    "options": ["São Paulo", "Rio de Janeiro", "Amazonas", "Minas Gerais"],
+    "cor": "Amazonas"
+  },
+  {
+    "quest": "Quem inventou o rádio",
+    "options": ["Guglielmo Marconi", "Tesla", "Edison", "Bell"],
+    "cor": "Guglielmo Marconi"
+  },
+  {
+    "quest": "Qual país é famoso pelo flamenco",
+    "options": ["Espanha", "Portugal", "Itália", "França"],
+    "cor": "Espanha"
+  },
+  {
+    "quest": "Qual é o maior animal terrestre africano",
+    "options": ["Rinoceronte", "Elefante", "Girafa", "Hipopótamo"],
+    "cor": "Elefante"
+  },
+  {
+    "quest": "Quem escreveu “O Hobbit”",
+    "options": ["J.R.R. Tolkien", "C.S. Lewis", "George Martin", "Lewis Carroll"],
+    "cor": "J.R.R. Tolkien"
+  },
+  {
+    "quest": "Qual planeta é o mais distante do Sol",
+    "options": ["Netuno", "Saturno", "Urano", "Plutão"],
+    "cor": "Netuno"
+  },
+  {
+    "quest": "Qual é a capital da Nova Zelândia",
+    "options": ["Auckland", "Wellington", "Christchurch", "Dunedin"],
+    "cor": "Wellington"
+  },
+  {
+    "quest": "Qual é a bebida alcoólica típica da Rússia",
+    "options": ["Vodka", "Rum", "Whisky", "Tequila"],
+    "cor": "Vodka"
+  },
+  {
+    "quest": "Qual cientista formulou a lei da gravitação universal",
+    "options": ["Newton", "Isaac Newton", "Galileo", "Einstein"],
+    "cor": "Isaac Newton"
+  },
+  {
+    "quest": "Qual é o maior rio da Europa",
+    "options": ["Reno", "Volga", "Danúbio", "Sena"],
+    "cor": "Volga"
+  },
+  {
+    "quest": "Quem pintou “O Jardim das Delícias”",
+    "options": ["Hieronymus Bosch", "Hieronymus Bosch", "Bruegel", "Dürer"],
+    "cor": "Hieronymus Bosch"
+  },
+  {
+    "quest": "Qual é a capital da Coreia do Sul",
+    "options": ["Pyongyang", "Seul", "Busan", "Incheon"],
+    "cor": "Seul"
+  },
+  {
+    "quest": "Qual carro é fabricado pela Mercedes-Benz",
+    "options": ["C-Class", "Mustang", "Corolla", "Civic"],
+    "cor": "C-Class"
+  },
+  {
+    "quest": "Qual é o motor usado em barcos de grande porte",
+    "options": ["Diesel marinho", "Motor elétrico", "Gasolina", "Turbina"],
+    "cor": "Diesel marinho"
+  },
+  {
+    "quest": "Qual é o software de edição de áudio da Adobe",
+    "options": ["Audition", "Premiere", "Photoshop", "Illustrator"],
+    "cor": "Audition"
+  },
+  {
+    "quest": "Qual é o protocolo usado para navegação segura na web",
+    "options": ["HTTPS", "HTTP", "FTP", "SMTP"],
+    "cor": "HTTPS"
+  },
+  {
+    "quest": "Qual doença é causada pela deficiência de vitamina D",
+    "options": ["Raquitismo", "Escorbuto", "Anemia", "Osteoporose"],
+    "cor": "Raquitismo"
+  },
+  {
+    "quest": "Qual marca fabrica notebooks ROG",
+    "options": ["Asus", "Dell", "Lenovo", "HP"],
+    "cor": "Asus"
+  },
+  {
+    "quest": "Qual é o tipo de IA usada para reconhecimento facial",
+    "options": ["CNN", "CNN", "RNN", "GAN"],
+    "cor": "CNN"
+  },
+  {
+    "quest": "Qual é o componente que mede corrente elétrica",
+    "options": ["Voltímetro", "Amperímetro", "Ohmímetro", "Wattímetro"],
+    "cor": "Amperímetro"
+  },
+  {
+    "quest": "Qual carro elétrico da BMW",
+    "options": ["i3", "i4", "Model 3", "Leaf"],
+    "cor": "i3"
+  },
+  {
+    "quest": "Qual é o motor usado em helicópteros",
+    "options": ["Turbina a gás", "Motor elétrico", "Diesel", "Motor a combustão interna"],
+    "cor": "Turbina a gás"
+  },
+  {
+    "quest": "Qual é o software usado para desenho técnico 2D/3D",
+    "options": ["AutoCAD", "Illustrator", "Photoshop", "Maya"],
+    "cor": "AutoCAD"
+  },
+  {
+    "quest": "Qual é a principal peça que transforma rotação do motor em movimento das rodas",
+    "options": ["Transmissão", "Alternador", "Radiador", "Bateria"],
+    "cor": "Transmissão"
+  },
+  {
+    "quest": "Qual é a unidade de carga elétrica",
+    "options": ["Coulomb", "Volt", "Ampere", "Ohm"],
+    "cor": "Coulomb"
+  },
+  {
+    "quest": "Qual é a empresa que fabrica GPUs Quadro",
+    "options": ["NVIDIA", "AMD", "Intel", "Qualcomm"],
+    "cor": "NVIDIA"
+  },
+  {
+    "quest": "Qual carro esportivo é fabricado pela Bugatti",
+    "options": ["Chiron", "Mustang", "Supra", "Aventador"],
+    "cor": "Chiron"
+  },
+  {
+    "quest": "Qual doença é causada pelo vírus da hepatite",
+    "options": ["Hepatite", "Dengue", "Gripe", "Sarampo"],
+    "cor": "Hepatite"
+  },
+  {
+    "quest": "Qual é a unidade de energia elétrica",
+    "options": ["Joule", "Watt", "Ampere", "Volt"],
+    "cor": "Joule"
+  },
+  {
+    "quest": "Qual empresa fabrica os processadores EPYC",
+    "options": ["AMD", "Intel", "Qualcomm", "NVIDIA"],
+    "cor": "AMD"
+  },
+  {
+    "quest": "Qual é o software usado para simulação de circuitos eletrônicos",
+    "options": ["Multisim", "SolidWorks", "AutoCAD", "Fritzing"],
+    "cor": "Multisim"
+  }
 ];
 
 // --- Variáveis de Estado Ajustadas ---
@@ -869,22 +1835,18 @@ let bloqueado = false;
 let score = 0;
 let timerInterval;
 
-// ✨ NOVO LIMITE DE TEMPO: 15 segundos
-const TEMPO_POR_PERGUNTA = 15; 
-// ✨ NOVO LIMITE DE PERGUNTAS: 30
-const LIMITE_PERGUNTAS = 30; 
+// Alterações solicitadas
+const TEMPO_POR_PERGUNTA = 15; // Timer aumentado para 15 segundos
+const LIMITE_PERGUNTAS = 30; // Limite de 30 perguntas
 let perguntasTotaisFeitas = 0;
 
-// Função para criar o conjunto de 30 perguntas (repetindo as originais)
+// Função para criar a lista de 30 perguntas aleatórias (agora usando um subset da lista de 80)
 function criarListaPerguntas() {
-    perguntasRestantes = [];
-    // Repete as perguntasOriginais até atingir o LIMITE_PERGUNTAS
-    for (let i = 0; i < LIMITE_PERGUNTAS; i++) {
-        const pergunta = perguntasOriginais[i % perguntasOriginais.length];
-        perguntasRestantes.push({...pergunta}); // Cria uma cópia para evitar alterações no original
-    }
-    // Opcional: Embaralhar a lista final de 30 perguntas
-    perguntasRestantes.sort(() => Math.random() - 0.5);
+    // 1. Cria uma cópia da lista original e a embaralha
+    const perguntasEmbaralhadas = [...perguntasOriginais].sort(() => Math.random() - 0.5);
+
+    // 2. Pega os primeiros 30 elementos para a lista de perguntas restantes, garantindo um set novo a cada rodada
+    perguntasRestantes = perguntasEmbaralhadas.slice(0, perguntasOriginais.length);
 }
 
 // --- Funções Principais ---
@@ -893,7 +1855,7 @@ function criarListaPerguntas() {
 function iniciarQuiz() {
     score = 0;
     perguntasTotaisFeitas = 0;
-    criarListaPerguntas(); // Cria e embaralha a lista de 30 perguntas
+    criarListaPerguntas(); // Cria e embaralha a lista de 30 perguntas aleatórias
 
     scoreEl.textContent = `Score: 0 | Pergunta: 1/${LIMITE_PERGUNTAS}`;
 
@@ -918,6 +1880,7 @@ function renderQuestion() {
         return finalizarQuiz();
     }
 
+    // A contagem é incrementada ANTES de renderizar a pergunta
     perguntasTotaisFeitas++;
     scoreEl.textContent = `Score: ${score} | Pergunta: ${perguntasTotaisFeitas}/${LIMITE_PERGUNTAS}`;
 
@@ -930,8 +1893,8 @@ function renderQuestion() {
     clearInterval(timerInterval); // Limpa o timer anterior
     iniciarTimer(); // Inicia um novo timer
 
-    // 2. Seleciona a Pergunta (retirando do array restante)
-    perguntaAtual = perguntasRestantes.shift(); // Pega a primeira pergunta do array e remove
+    // 2. Seleciona a Pergunta (removendo do array para não repetir na mesma sessão)
+    perguntaAtual = perguntasRestantes.shift(); 
     questionEl.textContent = perguntaAtual.quest + "?";
 
     // 3. Embaralha e Renderiza as Opções
